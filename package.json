@@ -1,7 +1,7 @@
 {
   "name": "@zeuscoder-public/microservices-course-shared",
   "version": "1.0.0",
-  "description": "common module",
+  "description": "common module with shared code for kube",
   "main": "index.js",
   "scripts": {},
   "keywords": [],
