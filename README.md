@@ -1,0 +1,1 @@
+- uses npm inside this /common folder as this gets published to npm

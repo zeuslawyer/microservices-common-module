@@ -2,9 +2,20 @@
   "name": "@zeuscoder-public/microservices-course-shared",
   "version": "1.0.0",
   "description": "common module with shared code for kube",
-  "main": "index.js",
-  "scripts": {},
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build/**/*"
+  ],
+  "scripts": {
+    "clean": "del ./build/*",
+    "build": "npm run clean && tsc"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "del-cli": "^3.0.1",
+    "typescript": "^3.9.5"
+  }
 }
