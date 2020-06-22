@@ -1,6 +1,6 @@
 {
-  "name": "@zeuscoder-public/microservices-course-common",
-  "version": "1.0.1",
+  "name": "@zeuscoder-public/microservices-course-shared",
+  "version": "1.0.0",
   "description": "common module",
   "main": "index.js",
   "scripts": {},
