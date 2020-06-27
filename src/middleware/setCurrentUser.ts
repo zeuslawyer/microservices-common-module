@@ -15,7 +15,11 @@ declare global {
   }
 }
 
+/**
+ * Decodes jwt if it exists and sets it on req for every incoming request
+ */
 export const setCurrentUser = (req: Request, res: Response, next: NextFunction) => {
+  // if there is a jwt on the request, set current user on req
   if (req.session!.jwt) {
     try {
       const payload = jwt.verify(req.session!.jwt, process.env.JWT_KEY!) as UserPayload;
@@ -26,6 +30,7 @@ export const setCurrentUser = (req: Request, res: Response, next: NextFunction) 
       next();
     }
   } else {
+    // else call next middleware
     return next();
   }
 };
