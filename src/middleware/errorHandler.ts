@@ -10,5 +10,6 @@ export const errorHandler = (err: Error, req: Request, res: Response, next: Next
   }
 
   // else
+  console.error(err);
   return res.status(400).send({ errors: [{ message: "Something went wrong. " }] });
 };
