@@ -1,2 +1,2 @@
-- uses npm inside this /common folder as this gets published to npm
+- **NOTE** uses npm inside this /common folder as this gets published to npm
 - run `npm run pub` to publish
