@@ -22,7 +22,7 @@ export abstract class Publisher<T extends EventData> {
       this.client.publish(this.subject, data, err => {
         if (err) return rej(err);
 
-        console.log(`*** data published in channel ${this.subject}***`);
+        console.log(`*** Base Publisher Data published in channel ${this.subject}***`);
         res();
       });
     });

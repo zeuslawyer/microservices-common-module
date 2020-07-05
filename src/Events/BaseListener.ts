@@ -32,7 +32,7 @@ export abstract class Listener<T extends EventData> {
 
     // listen
     subscription.on("message", (msg: Message) => {
-      console.log(`Message received: ${this.subject} /  ${this.qGroupName}`);
+      console.log(`*** Base Listener Message received: ${this.subject} /  ${this.qGroupName}`);
 
       const data = this.parseMessage(msg);
       this.handleMessage(data, msg);
