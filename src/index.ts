@@ -17,3 +17,4 @@ export * from "./Events/BaseListener";
 export * from "./Events/BasePublisher";
 export * from "./Events/Event-Data";
 export * from "./Events/Subjects";
+export * from "./Events/Types/order-status";
