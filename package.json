@@ -1,6 +1,6 @@
 {
   "name": "@zeuscoder-public/microservices-course-shared",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "common module with shared code for kube",
   "main": "build/index.js",
   "types": "build/index.d.ts",
