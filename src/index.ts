@@ -15,6 +15,6 @@ export * from "./middleware/setCurrentUser";
 // Events
 export * from "./Events/BaseListener";
 export * from "./Events/BasePublisher";
-export * from "./Events/Event-Data";
+export * from "./Events/Events-Data-Attributes";
 export * from "./Events/Subjects";
-export * from "./Events/Types/order-status";
+export * from "./Events/Enums/order-status";
