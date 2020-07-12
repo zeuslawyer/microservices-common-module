@@ -1,4 +1,8 @@
+// subjects aka channels or topics
+
 export enum SubjectsEnum {
   TicketCreated = "ticket:created",
-  TicketUpdated = "ticket:updated"
+  TicketUpdated = "ticket:updated",
+  OrderCreated = "order:created",
+  OrderCanceled = "order:canceled"
 }
