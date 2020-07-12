@@ -1,11 +1,11 @@
 import { Message, Stan } from "node-nats-streaming";
 import { SubjectsEnum } from "./Subjects";
 
-interface EventData {
+interface Event {
   subject: SubjectsEnum;
   data: any;
 }
-export abstract class Listener<T extends EventData> {
+export abstract class Listener<T extends Event> {
   abstract subject: T["subject"];
   abstract qGroupName: string;
   abstract handleMessage(messageData: T["data"], msg: Message): void;
@@ -28,11 +28,17 @@ export abstract class Listener<T extends EventData> {
 
   listen() {
     // set up subscription with options and queue group
-    const subscription = this.client.subscribe(this.subject, this.qGroupName, this.subscriptionOptions());
+    const subscription = this.client.subscribe(
+      this.subject,
+      this.qGroupName,
+      this.subscriptionOptions()
+    );
 
     // listen
     subscription.on("message", (msg: Message) => {
-      console.log(`*** Base Listener Message received: ${this.subject} /  ${this.qGroupName}`);
+      console.log(
+        `*** Base Listener Message received: ${this.subject} /  ${this.qGroupName}`
+      );
 
       const data = this.parseMessage(msg);
       this.handleMessage(data, msg);
@@ -43,6 +49,8 @@ export abstract class Listener<T extends EventData> {
     const data = msg.getData();
 
     // handle string and buffer data types
-    return typeof data === "string" ? JSON.parse(data) : JSON.parse(data.toString("utf8"));
+    return typeof data === "string"
+      ? JSON.parse(data)
+      : JSON.parse(data.toString("utf8"));
   }
 }

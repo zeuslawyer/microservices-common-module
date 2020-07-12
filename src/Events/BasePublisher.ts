@@ -1,11 +1,11 @@
 import { SubjectsEnum } from "./Subjects";
 import { Message, Stan } from "node-nats-streaming";
 
-interface EventData {
+interface Event {
   subject: SubjectsEnum;
   data: any;
 }
-export abstract class Publisher<T extends EventData> {
+export abstract class Publisher<T extends Event> {
   abstract subject: T["subject"];
 
   private client: Stan;
@@ -22,7 +22,9 @@ export abstract class Publisher<T extends EventData> {
       this.client.publish(this.subject, data, err => {
         if (err) return rej(err);
 
-        console.log(`***>> Base Publisher Data published in channel ${this.subject}***`);
+        console.log(
+          `***>> Base Publisher Data published in channel ${this.subject}***`
+        );
         res();
       });
     });
