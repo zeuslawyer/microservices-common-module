@@ -29,7 +29,7 @@ export interface OrderCreatedEvent {
   data: BaseOrderData;
 }
 
-export interface OrderCanceled {
+export interface OrderCanceledEvent {
   subject: SubjectsEnum.OrderCanceled;
   data: BaseOrderData;
 }
