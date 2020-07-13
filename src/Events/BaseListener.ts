@@ -8,7 +8,10 @@ interface Event {
 export abstract class Listener<T extends Event> {
   abstract subject: T["subject"];
   abstract qGroupName: string;
-  abstract async handleMessage(messageData: T["data"], msg: Message): void;
+  abstract async handleMessage(
+    messageData: T["data"],
+    msg: Message
+  ): Promise<void>;
 
   private client: Stan;
   protected ackWait = 5 * 1000; // protected so subclasses can access and modify
