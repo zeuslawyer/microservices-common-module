@@ -24,6 +24,11 @@ export interface TicketCreatedEvent {
   data: BaseTicketData;
 }
 
+export interface TicketUpdatedEvent {
+  subject: SubjectsEnum.TicketCreated;
+  data: BaseTicketData;
+}
+
 export interface OrderCreatedEvent {
   subject: SubjectsEnum.OrderCreated;
   data: BaseOrderData;
