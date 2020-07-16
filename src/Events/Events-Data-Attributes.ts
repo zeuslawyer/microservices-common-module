@@ -7,6 +7,7 @@ interface BaseTicketData {
   price: number;
   title: string;
   userId: string;
+  version?: number;
 }
 interface BaseOrderData {
   id: string;
@@ -17,6 +18,7 @@ interface BaseOrderData {
   };
   status: OrderStatus;
   expiresAt: string; // as will be JSON string when serialized
+  version: number;
 }
 
 export interface TicketCreatedEvent {
