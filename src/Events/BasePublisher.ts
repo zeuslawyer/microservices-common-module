@@ -8,7 +8,7 @@ interface Event {
 export abstract class Publisher<T extends Event> {
   abstract subject: T["subject"];
 
-  private client: Stan;
+  protected client: Stan;
   protected ackWait = 5 * 1000; // protected so subclasses can access and modify
 
   constructor(client: Stan) {
