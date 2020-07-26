@@ -7,8 +7,8 @@ interface BaseTicketData {
   price: number;
   title: string;
   userId: string;
-  version: number;
   orderId?: string;
+  version: number;
 }
 interface BaseOrderData {
   id: string;
