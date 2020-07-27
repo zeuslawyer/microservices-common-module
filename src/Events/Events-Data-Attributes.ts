@@ -1,5 +1,4 @@
 import { SubjectsEnum } from "./Subjects";
-import { BadRequestError } from "../Errors/BadRequestError";
 import { OrderStatus } from "./Enums/order-status";
 
 interface BaseTicketData {
@@ -40,4 +39,11 @@ export interface OrderCreatedEvent {
 export interface OrderCanceledEvent {
   subject: SubjectsEnum.OrderCanceled;
   data: BaseOrderData;
+}
+
+export interface OrderExpiredEvent {
+  subject: SubjectsEnum.OrderExpired;
+  data: {
+    orderId: string;
+  };
 }
