@@ -47,3 +47,12 @@ export interface OrderExpiredEvent {
     orderId: string;
   };
 }
+
+export interface PaymentCreatedEvent {
+  subject: SubjectsEnum.PaymentCreated;
+  data: {
+    id: string;
+    orderId: string;
+    stripeId: string;
+  };
+}
